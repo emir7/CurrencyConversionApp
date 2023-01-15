@@ -85,11 +85,7 @@ export class AutocompleteComponent implements OnInit, OnDestroy {
 
     this.unHighlightPreviousActiveElement();
     this.activeElementIndex++;
-
-    this.autocompleteElements
-      .toArray()
-      [this.activeElementIndex].nativeElement.scrollIntoView();
-    this.filteredList[this.activeElementIndex].isHighlighted = true;
+    this.highlightAutocompleteItem();
   }
 
   public onKeyUp(): void {
@@ -99,10 +95,7 @@ export class AutocompleteComponent implements OnInit, OnDestroy {
 
     this.unHighlightPreviousActiveElement();
     this.activeElementIndex--;
-    this.autocompleteElements
-      .toArray()
-      [this.activeElementIndex].nativeElement.scrollIntoView();
-    this.filteredList[this.activeElementIndex].isHighlighted = true;
+    this.highlightAutocompleteItem();
   }
 
   public onKeyEnter(): void {
@@ -121,6 +114,13 @@ export class AutocompleteComponent implements OnInit, OnDestroy {
     this.searchText = autocompleteItem.value;
     this.searchTextSource.next(this.searchText);
     this.valueChanged.emit(autocompleteItem.value);
+  }
+
+  private highlightAutocompleteItem(): void {
+    this.autocompleteElements
+      .toArray()
+      [this.activeElementIndex].nativeElement.scrollIntoView();
+    this.filteredList[this.activeElementIndex].isHighlighted = true;
   }
 
   private setSubscriptions(): void {

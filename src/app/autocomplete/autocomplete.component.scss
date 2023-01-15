@@ -5,6 +5,17 @@ input:focus {
   color: var(--main-color);
 }
 
+input {
+  border-radius: 15px;
+  border-width: 2px;
+}
+
+.input-icon {
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .input-icon span {
   width: 4px;
   height: 9px;
@@ -49,15 +60,4 @@ input:focus {
 .autocomplete-element:hover, .autocomplete-element.active {
   background-color: gray;
   color: white;
-}
-
-input {
-  border-radius: 15px;
-  border-width: 2px;
-}
-
-.input-icon {
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
 }
