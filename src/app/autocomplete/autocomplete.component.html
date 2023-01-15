@@ -1,0 +1,33 @@
+<label [for]="inputId">{{ labelText }}</label>
+<div class="position-relative">
+  <input
+    type="text"
+    class="form-control mt-1"
+    #autocompleteInput
+    [id]="inputId"
+    [(ngModel)]="searchText"
+    (ngModelChange)="onTextChange()"
+    (focus)="onFocus()"
+    (keydown.arrowDown)="onKeyDown()"
+    (keydown.arrowUp)="onKeyUp()"
+    (keydown.enter)="onKeyEnter()"
+  >
+  <div class="position-absolute input-icon">
+    <span class="left" [ngClass]="{'active' : isAutocompleteListDisplayed}"></span>
+    <span class="right" [ngClass]="{'active' : isAutocompleteListDisplayed}"></span>
+  </div>
+
+  <div class="position-absolute autocomplete-list" *ngIf="filteredList.length > 0 && isAutocompleteListDisplayed">
+    <div
+      #autocompleteElement
+      *ngFor="let autocompleteItem of filteredList; let i = index;"
+      class="autocomplete-element"
+      [ngClass]="{ 'active': autocompleteItem.isHighlighted }"
+      (click)="onAutocompleteItemSelect(autocompleteItem)"
+    >
+      {{ autocompleteItem.value }}
+    </div>
+  </div>
+
+
+</div>

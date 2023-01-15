@@ -1,0 +1,63 @@
+input:focus {
+  border-color: var(--main-color);
+  box-shadow: none;
+  outline: 0 none;
+  color: var(--main-color);
+}
+
+.input-icon span {
+  width: 4px;
+  height: 9px;
+  background-color: gray;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.input-icon span.left {
+  transform: rotate(45deg);
+
+  &.active {
+    transform: rotate(-45deg);
+  }
+}
+
+.input-icon span.right {
+  transform: rotate(-45deg);
+
+  &.active {
+    transform: rotate(45deg);
+  }
+}
+
+.autocomplete-list {
+  z-index: 1;
+  border-radius: 15px;
+  padding: 10px;
+  top: 40px;
+  width: 100%;
+  max-height: 400px;
+  overflow-y: auto;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.autocomplete-element {
+  padding-left: 10px;
+  border-radius: 15px;
+}
+
+.autocomplete-element:hover, .autocomplete-element.active {
+  background-color: gray;
+  color: white;
+}
+
+input {
+  border-radius: 15px;
+  border-width: 2px;
+}
+
+.input-icon {
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}

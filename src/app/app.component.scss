@@ -1,0 +1,44 @@
+input:focus {
+  border-color: var(--main-color);
+  box-shadow: none;
+  outline: 0 none;
+  color: var(--main-color);
+}
+
+input {
+  border-radius: 15px;
+  border-width: 2px;
+}
+
+.text-decoration-underline {
+ text-decoration-thickness: 1px !important;
+}
+
+.divider-line {
+  height: 1px;
+  width: 100%;
+  background-color: #e0dde0;
+}
+
+.currency-conversion-rate-text, .base-amount-text, .base-amount-currency-text, .date-text {
+  color: gray;
+}
+
+.large-text {
+  font-size: 40px;
+}
+
+.medium-text {
+  font-size: 20px;
+}
+
+.counter-amount-text, .counter-amount-currency-text {
+  background: #C0077C;
+  background: linear-gradient(to right, #C0077C 0%, #ae059d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.date-text {
+  font-size: 14px;
+}

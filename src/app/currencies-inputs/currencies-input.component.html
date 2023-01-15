@@ -1,0 +1,28 @@
+<div class="row" >
+  <div class="col-5">
+    <autocomplete
+      [fullList]="fullAutocompleteCurrenciesList"
+      [searchText]="currentValue.baseCurrency"
+      labelText="From"
+      inputId="baseCurrency"
+      (valueChanged)="onBaseCurrencyValueChanged($event)"
+    ></autocomplete>
+  </div>
+  <div class="col-2 d-flex justify-content-center align-items-center">
+    <button (click)="onSwapCurrenciesClick()" class="btn btn-sm btn-flip mt-4">
+      <i class="bi bi-arrow-left-right"></i>
+    </button>
+  </div>
+  <div class="col-5">
+    <div class="position-relative">
+      <autocomplete
+        [fullList]="fullAutocompleteCurrenciesList"
+        [searchText]="currentValue.counterCurrency"
+        labelText="To"
+        inputId="counterCurrency"
+        (valueChanged)="onCounterCurrencyValueChanged($event)"
+      ></autocomplete>
+    </div>
+  </div>
+</div>
+
