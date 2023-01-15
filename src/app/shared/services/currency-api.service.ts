@@ -13,6 +13,7 @@ import {
 })
 export class CurrencyApiService {
   private readonly BASE_API_URL: string = 'https://api.exchangerate.host';
+
   public constructor(private readonly httpClient: HttpClient) {}
 
   public async getAvailableCurrencies(): Promise<Array<string>> {
