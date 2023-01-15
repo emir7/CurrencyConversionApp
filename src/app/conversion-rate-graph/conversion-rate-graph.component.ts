@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import * as Highcharts from 'highcharts';
+
 import { Utils } from '../utils';
 
 @Component({
