@@ -1,21 +1,6 @@
 import { ConversionDataResponse } from '../shared';
 
 export class Utils {
-  public static readonly months: Array<string> = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
-  ];
-
   public static currencyRateResponseToDataPoints(
     currencyRatesResponse: ConversionDataResponse,
   ): Array<[number, number]> {
